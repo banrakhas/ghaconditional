@@ -73,3 +73,11 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+
+  dummy:
+    needs: build
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output contents
+        run: "echo this will only run on Failure"
