@@ -63,7 +63,7 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./.github/workflows/reusable-workflow.yml
+    uses: ./.github/workflows/resuable_worklow.yml
 
 
   dummy:
