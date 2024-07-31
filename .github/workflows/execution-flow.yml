@@ -72,7 +72,7 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy
-        uses: ./.github/actions/resuable-workflow
+        uses: ./.github/actions/resuable-workflow.yaml
 
 
   dummy:
