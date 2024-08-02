@@ -16,5 +16,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: ${{ github.event.inputs.artifacts-download }}
+      - name: Echo output
+        run: ls
       - name: Echo Something
         run: echo "Hello from reusable workflow"
