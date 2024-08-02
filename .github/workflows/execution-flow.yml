@@ -73,6 +73,8 @@ jobs:
         run: ls
       - name: Deploy
         uses: ./.github/workflows/resuable_worklow.yml
+        with:
+          artifacts-download: dist-files
 
 
   dummy:
