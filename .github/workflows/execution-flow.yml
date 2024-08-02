@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo output
-        run: echo  ${{ needs.deploy.outputs}}
+        run: echo  ${{ needs.deploy.outputs.result}}
 
   dummy:
     needs: build
