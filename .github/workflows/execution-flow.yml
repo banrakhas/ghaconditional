@@ -67,7 +67,7 @@ jobs:
     with:
       artifacts-download: dist-files
     secrets:
-      GITHUB_TOKEN: ${{ secrets.MY_TEST_VALUE }}
+      MY-PRECIOUS: ${{ secrets.MY_TEST_VALUE }}
 
   dummy:
     needs: build

@@ -8,7 +8,7 @@ on:
         default: 'dist'
         type: string
     secrets:
-      GITHUB_TOKEN:
+      MY-PRECIOUS:
         description: 'GitHub Token'
         required: false
 
@@ -21,7 +21,7 @@ jobs:
         with:
           name: ${{ github.event.inputs.artifacts-download }}
       - name: echo secrets
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: echo ${{ secrets.MY-PRECIOUS }}
       - name: Echo output
         run: ls
       - name: Echo Something
