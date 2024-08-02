@@ -11,9 +11,15 @@ on:
       MY-PRECIOUS:
         description: 'some dummy secret'
         required: true
+    outputs:
+      result:
+        description: 'The result of the workflow'
+        value: ${{ jobs.build.outputs.outcome }}
 
 jobs:
   build:
+    outputs:
+      outcome: ${{ steps.my_id.outputs.result }}
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
@@ -26,3 +32,7 @@ jobs:
         run: ls
       - name: Echo Something
         run: echo "Hello from reusable workflow"
+      - name: Set Result output
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
+        id: my_id
+

@@ -67,7 +67,13 @@ jobs:
     with:
       artifacts-download: dist-files
     secrets:
-      MY-PRECIOUS: ${{ secrets.MY_TEST_VALUE }}
+      MY-PRECIOUS: ${{ secrets.MY_TEST_VALUE }} # This is a dummy secret
+  outputs:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo output
+        run: echo  ${{ needs.deploy.outputs}}
 
   dummy:
     needs: build
