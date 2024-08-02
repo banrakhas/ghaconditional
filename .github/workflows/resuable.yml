@@ -9,8 +9,8 @@ on:
         type: string
     secrets:
       MY-PRECIOUS:
-        description: 'GitHub Token'
-        required: false
+        description: 'some dummy secret'
+        required: true
 
 jobs:
   build:
