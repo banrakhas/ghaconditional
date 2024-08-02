@@ -7,6 +7,10 @@ on:
         required: true
         default: 'dist'
         type: string
+    secrets:
+      GITHUB_TOKEN:
+        description: 'GitHub Token'
+        required: false
 
 jobs:
   build:
@@ -16,6 +20,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: ${{ github.event.inputs.artifacts-download }}
+      - name: echo secrets
+        run: echo ${{ secrets.GITHUB_TOKEN }}
       - name: Echo output
         run: ls
       - name: Echo Something
