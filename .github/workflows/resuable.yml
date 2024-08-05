@@ -19,7 +19,7 @@ on:
 jobs:
   build:
     outputs:
-      outcome: ${{ steps.my_id.outputs.result }}
+      outcome: ${{ steps.my_id.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
@@ -35,4 +35,3 @@ jobs:
       - name: Set Result output
         run: echo "step-result=success" >> $GITHUB_OUTPUT
         id: my_id
-
